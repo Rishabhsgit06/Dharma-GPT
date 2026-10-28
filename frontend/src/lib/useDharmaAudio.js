@@ -311,7 +311,9 @@ export function useDharmaAudio({
 
   const connectWebSocket = useCallback(() => {
     return new Promise((resolve, reject) => {
-      const wsUrl = `ws://localhost:8000/ws/voice/${persona}`;
+      const httpBase = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
+      const wsBase = httpBase.replace(/^http/, 'ws');
+      const wsUrl = `${wsBase}/ws/voice/${persona}`;
       const ws = new WebSocket(wsUrl);
       wsRef.current = ws;
 

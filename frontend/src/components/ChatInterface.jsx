@@ -10,7 +10,7 @@ import { useDharmaAudio } from '../lib/useDharmaAudio';
 import { Menu, Sparkles, Server, User } from 'lucide-react';
 
 // ─── Backend URL ──────────────────────────────────────────────────────────────
-const API_BASE = 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000';
 
 const ChatInterface = ({ onStartVoice, activeMode: propMode, onModeChange }) => {
   const [messages, setMessages] = useState([]);

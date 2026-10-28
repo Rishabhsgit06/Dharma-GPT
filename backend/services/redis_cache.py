@@ -1,4 +1,9 @@
-import redis
+try:
+    import redis
+    _REDIS_IMPORTABLE = True
+except ImportError:
+    _REDIS_IMPORTABLE = False
+
 import os
 import json
 
@@ -12,6 +17,9 @@ _fallback_cache = {}
 
 def _get_redis():
     global _r, _REDIS_AVAILABLE
+    if not _REDIS_IMPORTABLE:
+        _REDIS_AVAILABLE = False
+        return None
     if _REDIS_AVAILABLE is not None:
         return _r if _REDIS_AVAILABLE else None
         

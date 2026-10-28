@@ -1,0 +1,6 @@
+-r requirements.txt
+redis
+faster-whisper
+soundfile
+numpy
+

@@ -1,0 +1,6 @@
+backend/data/
+backend/chroma_db/
+backend/pdf_analysis.txt
+backend/analyze_pdfs.py
+backend/agent.py
+

@@ -1,14 +1,11 @@
 fastapi
 uvicorn
 chromadb
-redis
 pydantic
 pydantic-settings
 python-dotenv
 websockets
 groq
 sse-starlette
-faster-whisper
 edge-tts
-soundfile
-numpy
+google-genai
